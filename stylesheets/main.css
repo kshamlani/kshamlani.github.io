@@ -14,7 +14,7 @@ html, body {
 
 html {
   position: absolute;
-  overflow-y: hidden;
+  /* overflow-y: hidden; */
   overflow-x: hidden; }
 
 /***------------------------------------- Change Select Color---------------------------------------- ***/
