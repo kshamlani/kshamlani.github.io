@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html>	
+    <head>
+       <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Kapil Shamlani | Interactive Web Developer</title>
+        <meta name="author" content="Kapil Shamlani">
+        <meta name="title" content="Kapil Shamlani | Interactive Web Developer">
+        <meta name="keywords" content="front-end developer, back-end developer, Web Developer Portfolio Showcase, Kapil Shamlani, front end developer india, UI UX Developer india">
+        <meta name="description" content="Kapil Shamlani | Web Developer, India. I likes to focus on full stack development for all devices using web technologies (HTML, CSS, JavaScript, PHP, Python, SQL, Magento) to develop compelling website, intuitive yet minimalistic interfaces, and engaging designs.">
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Kapil Shamlani | Web Developer | India"/>
+        <meta property="og:description" content="Web Developer, India. I likes to focus on full stack development for all devices using web technologies (HTML, CSS, JavaScript, PHP, Python, SQL, Magento) to develop compelling website, intuitive yet minimalistic interfaces, and engaging designs."/>
+        <meta property="og:type" content="article"/>
+	<meta property="og:title" content="Kapil Shamlani | Web Developer | India"/>
+	<meta property="og:description" content="Web Developer, India. I likes to focus on full stack development for all devices using web technologies (HTML, CSS, JavaScript, PHP, Python, SQL, Magento) to develop compelling website, intuitive yet minimalistic interfaces, and engaging designs."/>
+	<meta property="og:url" content="http://www.kapilshamlani.com"/>
+	<meta property="og:image" content="http://www.kapilshamlani.com/media/kapil-portfolio.png"/>
+	<meta property="article:published_time" content="2017-04-16"/>
+	<meta property="og:site_name" content="Kapil Shamlani"/>
+	<meta name="msvalidate.01" content="9DB19C88162AA707D1F00657F6B1A4A8" />
+	<link rel="stylesheet" href="stylesheets/spinload.css">
+        <link rel="stylesheet" href="stylesheets/main.css" type="text/css">
+        <link rel="stylesheet" href="stylesheets/font-awesome.min.css" type="text/css">
+        <link rel="icon" type="image/x-icon" href="media/transparent-images/logo.png">
+        <link rel="apple-touch-icon-precomposed" href="media/transparent-images/logo.png">
+        <script src="lib/jquery-3.1.1.min.js" type="text/javascript"></script>
+        <script src="lib/typed.min.js" type="text/javascript"></script>
+        <script>
+        window.addEventListener("load", function() {
+            var loader = document.getElementById("loader");
+            $("html").css("overflow-y", "visible");
+            document.body.removeChild(loader);
+        });
+        </script>
+        <script>
+
+        document.addEventListener('DOMContentLoaded', function(){
+
+            Typed.new("#typed", {
+                stringsElement: document.getElementById('typed-strings'),
+                typeSpeed: 30,
+                backDelay: 500,
+                loop: false,
+                contentType: 'html', // or text
+                // defaults to null for infinite loop
+                loopCount: null,
+                callback: function(){ foo(); },
+                resetCallback: function() { newTyped(); }
+            });
+
+            var resetElement = document.querySelector('.reset');
+            if(resetElement) {
+                resetElement.addEventListener('click', function() {
+                    document.getElementById('typed')._typed.reset();
+                });
+            }
+
+        });
+            
+            function newTyped(){ /* A new typed object */ }
+
+            function foo(){ console.log("Callback"); }
+        </script>
+        <script>
+
+            $(document).ready(function(){
+              $("a").on('click', function(event) {
+
+                if (this.hash !== "") {
+                    event.preventDefault();
+                    var hash = this.hash;
+                    $('html, body').animate({
+                    scrollTop: $(hash).offset().top
+                  }, 600, function(){
+                    window.location.hash = hash;
+                  });
+                }
+              });
+            });
+        </script>
+        
+
+    <script>
+    function _(id){ return document.getElementById(id); }
+    function submitForm(){
+        _("mybtn").disabled = true;
+        _("status").innerHTML = 'please wait...';
+        var formdata = new FormData();
+        formdata.append( "name", _("name").value );
+        formdata.append( "email", _("email").value );
+        formdata.append( "msg", _("msg").value );
+        var ajax = new XMLHttpRequest();
+        ajax.open( "POST", "contact-process.php" );
+        ajax.onreadystatechange = function() {
+            if(ajax.readyState == 4 && ajax.status == 200) {
+                if(ajax.responseText == "success"){
+                    _("my_form").innerHTML = '<h2>Thanks '+_("n").value+', your message has been sent.</h2>';
+                } else {
+                    _("status").innerHTML = ajax.responseText;
+                    _("mybtn").disabled = false;
+                }
+            }
+        }
+        ajax.send( formdata );
+    }
+</script>
+
+    </head>
+    
+    <body>
+      <div id="loader"><div id="loading"></div></div>
+        <header>
+           <div class="center">
+               <div class="logo-div"><a href="http://kapilshamlani.com">
+                <img class="logo" src="media/transparent-images/logo.png" alt="My Web logo"></a></div>
+                
+                <div class="nav-div">
+            <nav>
+                <ul>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#expt-skills">Expertise</a></li>
+                    <li><a href="#work">Work</a></li>
+                    <!-- <li><a  onclick="openNav()" style="cursor: pointer;">Contact</a></li> -->
+                    <li><a  href="mailto:kapil.shamlani@gmail.com">Contact</a></li>
+                </ul>
+            </nav></div></div>
+        </header>
+
+
+        <section class="home-hero">
+            <div class="wrap">
+                <div class="type-wrap">
+                   <div id="typed-strings">
+                       <p>Hello!!!</p>
+                       <p>I'm a <em>web developer.</em></p>
+                       <p>Always available for <br>interesting projects.</p>
+                       <p>I'm Kapil Shamlani.</p>
+                   </div>
+                   <span id="typed" style="white-space:pre;"></span>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="about" id="about">
+           <div class="about-me">About <span>Me</span></div>
+           <div class="about-info">
+           <p>I'm Web Developer (currently living in India) specializing in backend development with 2+ years of experience in a Web and REST Development as well in Data Management. Experienced with all stages of the development cycle for the dynamic projects.</p>
+           <p>I am available as Web Consultant Architect & Developer if you need a hand for some to setup some scalable & maintainable web applications (including huge CSS to scale or massive JavaScript app).</p>
+           <p>I have a passion for web development and love to create for web and mobile devices.</p>           
+           </div>
+            
+        </section>
+        
+
+       <section class="to-do">
+          <div id="mid">What Can I <span>do for</span> you</div>
+           <div class="to-do-list">
+               
+                  <div class="to-do-info-1">
+                   
+                   <div class="to-do-txt-1">
+                   <span>Design anything you want.</span>
+                   <p>I like to keep it simple & efficient. My goals are to focus on typography, content and conveying the message that you want to send.</p>
+                   </div>
+                   
+                   <div class="to-do-img-1"><i class="fa fa-dot-circle-o fa-5x" aria-hidden="true"></i></div>
+               </div>
+               
+                <div class="to-do-info-2">
+                   
+                   <div class="to-do-txt-2">
+                   <span>Develop anything you need.</span>
+                   <p>I'm a developer, so I know how to create your website to run across devices using the latest technologies available.</p>
+                   </div>
+                   
+                   <div class="to-do-img-2"><i class="fa fa-user fa-5x" aria-hidden="true"></i></div>
+               </div>
+            </div>
+       </section>
+
+        <section class="expt-skill" id="expt-skills">
+            <div class="panel">
+              <div class="frontside">
+                <a href="#" class="flip">Skills</a>  
+                <h1>M&upsih; &Xi;x&rho;er&Gamma;ise</h1> 
+                <div class="expt">
+                   <div class="expt-info-1">
+                       <div class="expt-img-1"><i class="fa fa-desktop fa-4x" aria-hidden="true"></i><strong><p>Web Development</p></strong></div>
+                       <div class="expt-txt-1"><p>I build websites & web applications using most effective technologies & frameworks.</p></div>
+                   </div>
+                   <div class="expt-info-2">
+                       <div class="expt-img-2"><i class="fa fa-pencil-square-o fa-4x" aria-hidden="true"></i><strong><p>UX/UI Design</p></strong></div>
+                       <div class="expt-txt-2"><p>I design the product from sketching to interaction to pixels, thus defining how smooth a product is to use.</p></div>
+                   </div>
+                   <div class="expt-info-3">
+                       <div class="expt-img-3"><i class="fa fa-database fa-4x" aria-hidden="true"></i><strong><p>Backend Design</p></strong></div>
+                       <div class="expt-txt-3"><p>So what makes the front end of a website possible? Where is all that data stored? This is where the I come in.</p></div>
+                   </div>
+                   <div class="expt-info-4">
+                       <div class="expt-img-4"><i class="fa fa-cubes fa-4x" aria-hidden="true"></i><strong><p>Improving Products</p></strong></div>
+                       <div class="expt-txt-4"><p>No job too big or too small. I do ad hoc products to improve user interface.All this to start wonderful user experiences.</p></div>
+                   </div>
+                    
+                </div>
+              </div>
+              
+              <div class="backside"> 
+                <a href="#" class="close">&#9735;</a>  
+                <h1>M&upsih; &Scaron;k&Iota;lls</h1>
+                <p>I got a grip in all phases of the front-end & back-end dev process. And tinkring the design and code has always been of interest to me.</p>
+                <div class="wrapper">
+                <div class="holder">
+
+                     <div class="bar" data-percent="90%">
+                     <span class="label light">HTML5, CSS3</span>
+                     </div>
+
+                     <div class="bar" data-percent="80%">
+                     <span class="label">JavaScript, jQuery, AJAX</span>
+                     </div>
+                     
+                     <div class="bar" data-percent="80%">
+                     <span class="label light">MySQL, Oracle SQL</span>
+                     </div>
+                     
+                     <div class="bar" data-percent="80%">
+                     <span class="label light">PHP</span>
+                     </div>
+
+                     <div class="bar" data-percent="45%">
+                     <span class="label">Python</span>
+                     </div>
+
+                     <div class="bar" data-percent="85%">
+                     <span class="label">CodeIgniter</span>
+                     </div>
+                     
+                     <div class="bar" data-percent="70%">
+                     <span class="label light">NodeJs</span>
+                     </div>
+
+                     <div class="bar" data-percent="60%">
+                     <span class="label">Laravel</span>
+                     </div>
+                     
+                     <div class="bar" data-percent="65%">
+                     <span class="label light">Angular</span>
+                     </div>
+                     
+             </div>
+
+        </div> 
+              </div>
+            </div>
+        </section>
+
+        <section class="cta">
+            <div class="cta-contain">
+                <span><p>Want to work together?</p></span>
+                 <p>If you have a project that you want to get started, think you need my help with something or just fancy saying hey, then get in touch.</p>
+                <br>
+
+               <div id="myNav" class="overlay">
+                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                  <div class="overlay-content">
+                   <h1>Contact Me</h1>
+
+                     <form id="my_form" onsubmit="submitForm(); return false;">
+
+                         <div class="contact-fields">
+                              <div class="field name-box">
+                                    <input type="text" id="name" placeholder="Enter your Name?" required>
+                                    <label for="name">Name</label>
+                                    <span class="ss-icon">check</span>
+                              </div>
+
+                              <div class="field email-box">
+                                    <input type="text" id="email" placeholder="name@email.com" required>
+                                    <label for="email">Email</label>
+                                    <span class="ss-icon">check</span>
+                              </div>
+
+                              <div class="field msg-box">
+                                    <textarea id="msg" rows="4" placeholder="Your message goes here..." required></textarea>
+                                    <label for="msg">Msg</label>
+                                    <span class="ss-icon">check</span>
+                              </div>
+
+                              <input class="button" id="mybtn" type="submit" value="Send" >
+                              <span id="status" style="color: #FF8C00; font-style: italic;"></span>
+                        </div>
+
+                    </form>
+                  </div>
+                </div>
+                <!-- <a class="get-start" onclick="openNav()"> Get Started</a> -->
+                <a class="get-start" href="mailto:kapil.shamlani@gmail.com"> Get Started</a>
+                <br>
+            </div>
+        </section>
+        
+        <section class="project-container" id="work">
+          <div id="project-title"><p>Work</p></div>
+          <div id="gallery">
+            <div id="images">
+
+              <div class="figure">
+                <a href="https://www.faceofindia.in/" target="_blank">
+                  <img class="image" src="media/gallery/foi.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">01</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">Face of India</b></h1> -->
+                      <p class="text" style="color: white">Face of India</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="figure">
+                <a href="https://www.punefashionweek.com/" target="_blank">
+                  <img class="image" src="media/gallery/pfw.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">02</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">Pune Fashion Week</h1> -->
+                      <p class="text" style="color: white">Pune Fashion Week</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="figure">
+                <a href="https://www.worldfashionphotography.com/" target="_blank">
+                  <img class="image" src="media/gallery/WFW-photography.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">03</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">World Fashion Photography</b></h1> -->
+                      <p class="text" style="color: white">World Fashion Photography</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="figure">
+                <a href="http://www.throwyourparties.com/" target="_blank">
+                  <img class="image" src="media/gallery/typ.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">04</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">Throw Your Parties</b></h1> -->
+                      <p class="text" style="color: white">Throw Your Parties</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="figure">
+                <a href="http://www.casundrani.in/" target="_blank">
+                  <img class="image" src="media/gallery/casundrani-min.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">05</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">Sundrani & Co.</b></h1> -->
+                      <p class="text" style="color: white"><b>Sundrani & Co.</b></p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+              <div class="figure">
+                <a href="https://sunnybee.in/" target="_blank">
+                  <img class="image" src="media/gallery/sunnybeeIn-min.png"/>
+                  <div class="caption">
+                    <div class="body">
+                      <!-- <div class="number">06</div>
+                      <hr/> -->
+                      <!-- <h1 class="title">Sunnybee</b></h1> -->
+                      <p class="text" style="color: white">Sunnybee</p>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+        <footer>
+           <div class="container-foot">
+               <div class="copyrt">
+                  <img class="foot-logo" src="media/transparent-images/logo.png" alt="">
+                   <p>© 2018 <a href="">Kapil Shamlani</a>. All rights reserved.</p>
+               </div>
+               <div class="contact">
+		  <a href="https://codepen.io/kaph/"><i class="fa fa-codepen fa-2x" aria-hidden="true"></i></a>
+                  <a href="https://www.linkedin.com/in/kapil-shamlani-34985b135/"><i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a>
+              </div>
+           </div>
+        </footer>
+        <a href="#" id="back-to-top" title="Back to top">&uarr;</a>
+
+         <script>
+
+       if ($('#back-to-top').length) {
+        var scrollTrigger = 100, // px
+            backToTop = function () {
+                var scrollTop = $(window).scrollTop();
+                if (scrollTop > scrollTrigger) {
+                    $('#back-to-top').addClass('show');
+                } else {
+                    $('#back-to-top').removeClass('show');
+                }
+            };
+        backToTop();
+        $(window).on('scroll', function () {
+            backToTop();
+        });
+        $('#back-to-top').on('click', function (e) {
+            e.preventDefault();
+            $('html,body').animate({
+                scrollTop: 0
+            }, 600);
+        });
+        }
+       </script>
+       <script>
+
+
+            var panels = document.querySelectorAll('.panel');
+                for(var i=0; i<panels.length; i++)
+                {
+                  document.querySelector('a.flip', panels[i]).addEventListener('click', function(e){
+                    e.preventDefault();
+                    e.target.parentNode.parentNode.classList.add('flipped');
+                  });
+                  document.querySelector('a.close', panels[i]).addEventListener('click', function(e){
+                    e.preventDefault();
+                    e.target.parentNode.parentNode.classList.remove('flipped');
+                  });  
+                }
+        </script>
+        <script>
+
+            $(document).ready(function(){
+            $(".flip").click(function(){                
+                
+                $('.bar').each(function(i){  
+                    var $bar = $(this);
+                    $(this).append('<span class="count"></span>')
+                    setTimeout(function(){
+                      var bar_width = $bar.attr('data-percent');
+                      bar_width = parseFloat(bar_width)+20;
+                      bar_width = bar_width+'%';
+                      $bar.css('width', bar_width);      
+                    }, i*100);
+                  });
+
+                $('.count').each(function () {
+                    $(this).prop('Counter',0).animate({
+                        Counter: $(this).parent('.bar').attr('data-percent')
+                    }, {
+                        duration: 2000,
+                        easing: 'swing',
+                        step: function (now) {
+                            $(this).text(Math.ceil(now) +'%');
+                        }
+                    });
+                });
+                
+            });
+                    
+        });
+
+        </script>
+        <script>
+
+
+            function openNav() {
+                document.getElementById("myNav").style.height = "100%";
+                $("#back-to-top").hide();
+                $("html").css("overflow","hidden");
+            }
+
+            function closeNav() {
+                document.getElementById("myNav").style.height = "0%";
+                $("#back-to-top").show();
+                $("html").css("overflow","visible");
+                $("html").css("overflow-x","hidden");
+            }
+        </script>
+        <script>
+                    // Input Lock
+            $('textarea').blur(function () {
+                $('#hire textarea').each(function () {
+                    $this = $(this);
+                    if ( this.value != '' ) {
+                      $this.addClass('focused');
+                      $('textarea + label + span').css({'opacity': 1});
+                    }
+                    else {
+                      $this.removeClass('focused');
+                      $('textarea + label + span').css({'opacity': 0});
+                    }
+                });
+            });
+
+            $('#hire .field:first-child input').blur(function () {
+                $('#hire .field:first-child input').each(function () {
+                    $this = $(this);
+                    if ( this.value != '' ) {
+                      $this.addClass('focused');
+                      $('.field:first-child input + label + span').css({'opacity': 1});
+                    }
+                    else {
+                      $this.removeClass('focused');
+                      $('.field:first-child input + label + span').css({'opacity': 0});
+                    }
+                });
+            });
+
+            $('#hire .field:nth-child(2) input').blur(function () {
+                $('#hire .field:nth-child(2) input').each(function () {
+                    $this = $(this);
+                    if ( this.value != '' ) {
+                      $this.addClass('focused');
+                      $('.field:nth-child(2) input + label + span').css({'opacity': 1});
+                    }
+                    else {
+                      $this.removeClass('focused');
+                      $('.field:nth-child(2) input + label + span').css({'opacity': 0});
+                    }
+                });
+            });
+        </script>
+        
+                
+    </body>
+	
+</html>
